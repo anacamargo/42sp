@@ -1,41 +1,36 @@
-TARGET=libft
-GCC=gcc
-LD=gcc
-CCFLAGS=$(DEBUG) $(OPT) $(WARN) $(PATHREAD) -pipe
-LDFLAGS=$(PTHREAD) -export-dynamic
-OBJS= main.o ft_isalnum.o ft_isalpha.o ft_isdigit.o ft_isprint.o ft_memset.o ft_strlcpy.o ft_strlen.o ft_tolower.o ft_toupper.o
-all: $(OBJS)
-		$(LD) -o $(TARGET) $(OBJS) $(LDFLAGS)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2021/02/13 00:21:56 by aclaudia          #+#    #+#              #
+#    Updated: 2021/02/13 00:21:58 by aclaudia         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-main.o: main.c
-	$(CC) -c $(CCFLAGS) main.c -o main.o
+NAME=libft.a
 
-ft_isalnum.o: ft_isalnum.c
-	$(CC) -c $(CCFLAGS) ft_isalnum.c -o ft_isalnum.o
+SRC=ft_isalnum.c ft_isalpha.c ft_memset.c ft_strchr.c ft_isdigit.c ft_isprint.c ft_strlcpy.c\
+ft_strlen.c ft_tolower.c ft_toupper.c
 
-ft_isalpha.o: ft_isalpha.c
-	$(CC) -c $(CCFLAGS) ft_isalpha.c -o ft_isalpha.o
+OBJ=$(SRC:.c=.o)
 
-ft_isdigit.o: ft_isdigit.c
-	$(CC) -c $(CCFLAGS) ft_isdigit.c -o ft_isdigit.o
+FLAGS+=-Wall -Wextra -Werror -I./ -c
 
-ft_isprint.o: ft_isprint.c
-	$(CC) -c $(CCFLAGS) ft_isprint.c -o ft_isprint.o
+.PHONY: all clean fclean re
 
-ft_memset.o: ft_memset.c
-	$(CC) -c $(CCFLAGS) ft_memset.c -o ft_memset.o
+$(NAME): $(OBJ)
+	gcc $(FLAGS) $(SRC)
+	ar rc $(NAME) $(OBJ)
 
-ft_strlcpy.o: ft_strlcpy.c
-	$(CC) -c $(CCFLAGS) ft_strlcpy.c -o ft_strlcpy.o
-
-ft_strlen.o: ft_strlen.c
-	$(CC) -c $(CCFLAGS) ft_strlen.c -o ft_strlen.o
-
-ft_tolower.o: ft_tolower.c
-	$(CC) -c $(CCFLAGS) ft_tolower.c -o ft_tolower.o
-
-ft_toupper.o: ft_toupper.c
-	$(CC) -c $(CCFLAGS) ft_toupper.c -o ft_toupper.o
+all: $(NAME)
 
 clean:
-	rm -f *.o
+	rm -f ${OBJ}
+
+fclean: clean
+	rm -f $(NAME)
+
+re: fclean all
