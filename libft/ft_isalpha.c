@@ -6,16 +6,15 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 22:19:04 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/09 22:25:45 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/13 00:34:34 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isalpha(int c)
 {
-	unsigned char a;
-
-	a = c;
-	if ((a > 64 && a < 91) || (a > 96 && a < 123))
-		return (a);
+	if ((c > 64 && c < 91) || (c > 96 && c < 123))
+		return (1);
 	return (0);
 }

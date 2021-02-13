@@ -6,9 +6,11 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 02:45:49 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/09 12:31:34 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/11 20:59:22 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_toupper(int c)
 {

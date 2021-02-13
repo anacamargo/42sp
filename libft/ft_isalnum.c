@@ -6,12 +6,11 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 22:33:45 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/09 22:47:41 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/11 20:57:07 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
+#include "libft.h"
 
 int	ft_isalnum(int c)
 {

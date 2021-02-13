@@ -6,20 +6,22 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 02:44:50 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/10 03:30:55 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/13 01:22:54 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(char *s, int c)
+#include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
 {
 	int i;
 
 	i = 0;
-	while (s[i] != '\0')
+	while (s[i] && c != s[i])
 	{
 		if (s[i] == c)
-			return (s[i]);
+			return ((char*)s);
 		i++;
 	}
-	return ((s[i] == '\0') ? s[i] : 0);
+	return (NULL);
 }

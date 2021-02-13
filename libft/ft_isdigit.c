@@ -6,16 +6,15 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 12:12:25 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/09 22:16:13 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/13 00:35:14 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 int	ft_isdigit(int c)
 {
-	unsigned char d;
-
-	d = c;
-	if (d > 47 && d < 58)
-		return (d);
+	if (c > 47 && c < 58)
+		return (1);
 	return (0);
 }
