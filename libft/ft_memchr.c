@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 18:05:49 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/13 19:33:42 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/23 23:17:32 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 
 	str = s;
 	i = 0;
-
 	while (i < n)
 	{
 		if (str[i] == (unsigned char)c)

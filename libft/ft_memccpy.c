@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 01:54:51 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/23 00:58:12 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/23 23:14:34 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	d = dest;
 	s = src;
 	i = 0;
-
 	while (i < n)
 	{
 		d[i] = s[i];

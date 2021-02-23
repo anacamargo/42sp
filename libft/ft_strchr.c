@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 02:44:50 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/22 23:55:20 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/23 23:21:52 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != c)
 		s++;
-	if (*s  == c)
+	if (*s == c)
 		return ((char*)s);
 	return (NULL);
 }
