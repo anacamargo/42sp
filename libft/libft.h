@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:32:12 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/13 21:45:59 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/23 04:04:01 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 #define LIBFT_H
 
 #include <string.h>
+#include <stdlib.h>
 
 int     ft_atoi(const char *nptr);
 void    ft_bzero(void *s, size_t n);
+void	*ft_calloc(size_t nelem, size_t elsize);
 int     ft_isalnum(int c);
 int     ft_isalpha(int c);
 int     ft_isascii(int c);
@@ -31,6 +33,7 @@ void	*ft_memset(void *s, int c, size_t n);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
+char	*ft_strdup(const char *s);
 size_t	ft_strlen(const char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
