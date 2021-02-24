@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:32:12 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/24 01:13:18 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/24 23:47:49 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <string.h>
 # include <stdlib.h>
+# include <unistd.h>
 
 int		ft_atoi(const char *nptr);
 void	ft_bzero(void *s, size_t n);
