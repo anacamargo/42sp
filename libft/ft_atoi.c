@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:10:00 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/23 23:39:54 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/02/25 03:33:17 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,14 @@ int	ft_atoi(const char *nptr)
 	i = 0;
 	n = 0;
 	sign = 1;
-	if (nptr[0] == '-')
+	if (nptr[i] == '-' || nptr[i] == '+' || nptr[i] == ' ')
 	{
-		sign = -1;
+		if (nptr[i] == '-')
+			sign = -1;
 		i++;
 	}
-	while (nptr[i] != '\0')
+	while (nptr[i] > '0' && nptr[i] < '9')
 	{
-		if (ft_isdigit(nptr[i]) == 0)
-			return (0);
 		n = n * 10 + nptr[i] - '0';
 		i++;
 	}
