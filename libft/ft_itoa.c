@@ -5,45 +5,48 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 19:25:31 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/24 23:27:52 by aclaudia         ###   ########.fr       */
+/*   Created: 2021/02/26 03:10:40 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/02/26 04:57:59 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
 
-int		length(long	n)
+#define typeof(var) _Generic( (var),\
+char: "Char",\
+int: "Integer",\
+float: "Float",\
+char *: "String",\
+void *: "Pointer",\
+default: "Undefined")
+
+int		length(long int num)
 {
 	int i;
 
 	i = 1;
-	if (n == 0)
-		return (1);
-	while (n > 0)
-	{
-		n = n / 10;
+	while ((num = num / 10) >= 1)
 		i++;
-	}
 	return (i);
 }
 
-void	reverse(char *str)
+void	reverse(char *s)
 {
-	int 	i;
-	int		j;
-	char	s;
+	size_t	len;
+	size_t	i;
+	char	aux;
 
 	i = 0;
-	j = ft_strlen(str);
-	while (i < j)
+	len = ft_strlen(s);
+	while (i < len / 2)
 	{
-		s = str[i];
-		str[i] = str[j];
-		str[j] = s;
+		aux = s[i];
+		s[i] = s[len - i - 1];
+		s[len - i - 1] = aux;
+		i++;
 	}
 }
-
 
 char	*ft_itoa(int n)
 {
@@ -59,15 +62,18 @@ char	*ft_itoa(int n)
 
 	if (!str)
 		return (NULL);
+	if (num == 0)
+	{
+		str[i] = '0';
+		i++;
+	}
 	while (num > 0)
 	{	
 		str[i] = (num % 10) + '0';
 		num = num / 10;
 		i++;
 	}
-	if (num == 0)
-		str[i] = '0';
-	if (is_negative == 1)
+	if (is_negative)
 		str[i] = '-';
 	i++;
 	str[i] = '\0';
@@ -76,11 +82,11 @@ char	*ft_itoa(int n)
 	return (str);
 }
 
-// int main (void)
-// {
-// 	int 	n;
-
-// 	n =  1;
-// 	printf("teste%s", ft_itoa(n));
-// 	return (0);
-// }
+int main(void)
+{
+	int n = -240;
+	printf("%s\n", typeof(n));
+	ft_itoa(n);
+	printf("%s %s\n", ft_itoa(n),typeof(ft_itoa(n)));
+	return (0);
+}
