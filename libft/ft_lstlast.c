@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 02:43:37 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/01 04:09:24 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/01 23:34:20 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	while (lst)
 	{
-		if(!(lst->next))
+		if (!(lst->next))
 			return (lst);
 		lst = lst->next;
 	}
