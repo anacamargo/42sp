@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 02:45:49 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/11 20:59:22 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/01 00:41:03 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 int	ft_toupper(int c)
 {
-	unsigned char u;
-
-	u = c;
-	if (u > 96 && u < 123)
-		return (u - 32);
-	return (u);
+	if (c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
 }

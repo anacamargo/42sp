@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/23 04:02:34 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/01 00:40:11 by aclaudia         ###   ########.fr       */
+/*   Created: 2021/03/01 02:30:45 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/03/01 04:10:53 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nelem, size_t elsize)
+int	ft_lstsize(t_list *lst)
 {
-	void *s;
+	int i;
 
-	if (!(s = (void*)malloc(nelem * elsize)))
-		return (NULL);
-	ft_bzero(s, (nelem * elsize));
-	return (s);
+	i = 0;
+	while (lst)
+	{
+		i++;
+		lst = lst->next;
+	}
+	return (i);
 }

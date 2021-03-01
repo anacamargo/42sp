@@ -6,13 +6,13 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/27 00:04:49 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/28 06:01:29 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/01 04:40:55 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	count_words(char const *s, char c)
+static	size_t	count_words(char const *s, char c)
 {
 	size_t n;
 
@@ -30,7 +30,7 @@ size_t	count_words(char const *s, char c)
 	return (n);
 }
 
-size_t	get_end_position(char const *s, char c, size_t start)
+static	size_t	get_end_position(char const *s, char c, size_t start)
 {
 	size_t i;
 
@@ -40,7 +40,7 @@ size_t	get_end_position(char const *s, char c, size_t start)
 	return (i);
 }
 
-size_t	get_start_position(char const *s, char c, size_t start)
+static	size_t	get_start_position(char const *s, char c, size_t start)
 {
 	size_t i;
 
@@ -50,7 +50,7 @@ size_t	get_start_position(char const *s, char c, size_t start)
 	return (i);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
 	char		**arr;
 	size_t		words;

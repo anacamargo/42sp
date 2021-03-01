@@ -6,13 +6,13 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 01:40:50 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/27 23:07:41 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/01 04:41:57 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		is_set(char c, char const *set)
+static	int	is_set(char c, char const *set)
 {
 	int i;
 
@@ -24,7 +24,7 @@ int		is_set(char c, char const *set)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	int	end;
 

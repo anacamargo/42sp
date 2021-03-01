@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/24 01:13:49 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/24 01:29:56 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/01 04:22:54 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	i = 0;
 	j = 0;
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2);
-	str = (char*)malloc(len * sizeof(char));
-	if (!s1 && !s2)
+	if (!(str = (char*)malloc((len + 1) * sizeof(char))))
 		return (NULL);
 	while (s1[i] != '\0')
 	{
@@ -36,5 +37,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i++;
 		j++;
 	}
+	str[i] = '\0';
 	return (str);
 }

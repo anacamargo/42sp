@@ -6,13 +6,13 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:10:00 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/02/25 22:03:02 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/01 04:34:34 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_ispace(char c)
+static	int	ft_ispace(char c)
 {
 	if (c == '\t' || c == '\n' || c == '\v' \
 	|| c == '\f' || c == '\r' || c == ' ')
@@ -20,7 +20,7 @@ int	ft_ispace(char c)
 	return (0);
 }
 
-int	ft_atoi(const char *nptr)
+int			ft_atoi(const char *nptr)
 {
 	int	n;
 	int i;
