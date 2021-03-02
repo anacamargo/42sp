@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 03:44:32 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/01 00:43:46 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/02 03:01:45 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	len = strlen(s);
+	len = ft_strlen(s);
 	str = (char*)malloc((len + 1) * sizeof(char));
 	i = 0;
 	if (!str)
