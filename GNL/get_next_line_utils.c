@@ -6,13 +6,13 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 22:52:08 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/15 01:54:51 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/15 02:33:52 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static char		*ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
 	char	*str;
 	int		len;
@@ -23,7 +23,7 @@ static char		*ft_strdup(const char *s)
 	return (str);
 }
 
-static size_t	t_strlcpy(char *dest, const char *src, size_t size)
+size_t	t_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 
@@ -42,7 +42,7 @@ static size_t	t_strlcpy(char *dest, const char *src, size_t size)
 	return (ft_strlen(src));
 }
 
-static char		*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
 	int		i;
@@ -71,7 +71,7 @@ static char		*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-static char		*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	while (*s != (char)c)
 	{
@@ -82,7 +82,7 @@ static char		*ft_strchr(const char *s, int c)
 	return ((char*)s);
 }
 
-static char		*ft_substr(char const *s, unsigned int start, size_t len)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*str;
 	size_t	i;
