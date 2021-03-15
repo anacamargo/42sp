@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 22:52:08 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/15 02:33:52 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/15 03:25:55 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strdup(const char *s)
 	return (str);
 }
 
-size_t	t_strlcpy(char *dest, const char *src, size_t size)
+size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {
 	size_t	i;
 
