@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 23:31:53 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/16 23:08:53 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/16 23:46:39 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,9 @@ int		copy_array(char *t, char ***line, int out)
 	return (out);
 }
 
-int		check_init_conditions(int fd, char ***line, int BUFF_SIZE, char **t)
+int		check_init_conditions(int fd, char ***line, char **t)
 {
-	if (fd < 0 || !line || BUFF_SIZE <= 0)
+	if (fd < 0 || !line || BUFFER_SIZE <= 0)
 	{
 		free(*t);
 		return (-1);
@@ -49,8 +49,7 @@ int		get_next_line(int fd, char **line)
 	static char	*t;
 
 	out = 1;
-	
-	if (check_init_conditions(fd, &line, BUFFER_SIZE, &t) == -1)
+	if (check_init_conditions(fd, &line, &t) == -1)
 		return (-1);
 	t = (!t) ? ft_strdup("") : t;
 	while (!ft_strchr(t, '\n') && (out = read(fd, buf, BUFFER_SIZE)) > 0)

@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 22:40:23 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/16 22:52:49 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/16 23:46:07 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define GET_NEXT_LINE_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
 
