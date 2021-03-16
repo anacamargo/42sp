@@ -6,7 +6,7 @@
 /*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 22:40:23 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/16 00:37:12 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/16 22:52:49 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include <sys/resource.h>
 # include <fcntl.h>
 
 int		get_next_line(int fd, char **line);
