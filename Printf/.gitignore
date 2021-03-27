@@ -2,3 +2,4 @@ printf.txt
 src/*.o
 *.o
 libprintf.a
+test_ft_printf.c

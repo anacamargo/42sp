@@ -6,7 +6,7 @@
 #    By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 03:44:20 by aclaudia          #+#    #+#              #
-#    Updated: 2021/03/26 23:16:24 by vcordeir         ###   ########.fr        #
+#    Updated: 2021/03/27 20:32:34 by vcordeir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ LIBFT = libft/libft.a
 
 NAME = libftprintf.a
 
-SRCS_LIST = ft_printf.c ft_init_flags.c ft_convert.c
+SRCS_LIST = ft_printf.c ft_init_struct.c ft_convert.c ft_check_flags.c
 
 FOLDER = src
 

@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/26 23:57:50 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/27 20:30:30 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,31 @@
 typedef struct	s_flags
 {
 	int			index;
+	int			count;
 	int			dot;
 	int 		minus;
 	int			precision;
-	int			space;
-	int			star;
 	int			width;
 	int			zero;
+	int			total;
 	va_list		args;
 }				t_flags;
 
+typedef struct 	s_print
+{
+	char		c;
+	char		*s;
+	int			d;
+	uintptr_t	p;
+	size_t		u;
+	size_t		x;
+	char		type;
+}				t_print;
+
+
+void		ft_init_struct(t_flags *flag);
+void		ft_check_flags(char *s, t_flags *value);
+void		ft_select_conversion(char c, t_flags *value, t_print *print);
 int			ft_printf(const char *format, ...);
-t_flags 	*ft_init_flags(t_flags *flag);
-// void 		ft_check_flags(const char *format, t_flags *value);
-void		ft_select_conversion(char c, t_flags *value);
+int			ft_put(t_flags *flag, t_print *print);
 #endif
