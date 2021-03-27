@@ -1,4 +1,4 @@
 printf.txt
 src/*.o
+*.o
 libprintf.a
-main.c
