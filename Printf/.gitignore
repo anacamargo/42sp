@@ -1,0 +1,4 @@
+printf.txt
+src/*.o
+libprintf.a
+main.c
