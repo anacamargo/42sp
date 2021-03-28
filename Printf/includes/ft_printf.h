@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 21:39:27 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/27 22:40:02 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ typedef struct 	s_print
 	int			d;
 	uintptr_t	p;
 	size_t		u;
-	size_t		x;
+	// size_t		x;
 	char		type;
 	int			size;
 }				t_print;

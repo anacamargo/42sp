@@ -2,6 +2,6 @@
 
 int main()
 {
-	printf("|%020.20s|\n", "Little kid lover");
-	ft_printf("|%020.20s|\n", "Little kid lover");
+	char c = 'c';
+	printf("|%-020p|\n", &c);
 }

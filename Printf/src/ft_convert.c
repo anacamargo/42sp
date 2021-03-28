@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 04:07:34 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 21:54:57 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/27 23:56:26 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,16 @@ static	int		size_num (size_t num, int base)
 
 static	void	fill_size(t_print **print)
 {
-	if ((*print)->type == 'd' && (*print)->d == -2147483648)
-		(*print)->size = 11;
-	else if ((*print)->type == 'd' && (*print)->d < 0)
-		(*print)->size = 1 + size_num((*print)->d, 10);
+	if ((*print)->type == 'd' && (*print)->d < 0)
+		(*print)->size = 1 + size_num((*print)->d * -1, 10);
 	else if ((*print)->type == 'd')
 		(*print)->size = size_num((*print)->d, 10);
 	else if ((*print)->type == 'u')
 		(*print)->size = size_num((*print)->u, 10);
 	else if ((*print)->type == 'x' || (*print)->type == 'X')
-		(*print)->size = size_num((*print)->x, 16);
+		(*print)->size = size_num((*print)->u, 16);
 	else if ((*print)->type == 'p')
-		(*print)->size = size_num((*print)->p, 16);
+		(*print)->size = 2 + size_num((*print)->p, 16);
 	else if ((*print)->type == 'c')
 		(*print)->size = 1;
 	else if ((*print)->type == 's')
@@ -54,10 +52,8 @@ void			ft_select_conversion(char c, t_flags *value, t_print *print)
 		print->s = va_arg(value->args, char *);
 	else if (c == 'd' || c == 'i')
 		print->d = va_arg(value->args, int);
-	else if (c == 'u')
+	else if (c == 'u' || c == 'x' || c == 'X')
 		print->u = va_arg(value->args, unsigned int);
-	else if (c == 'x' || c == 'X')
-		print->x = va_arg(value->args, unsigned int);
 	else if (c == 'p')
 		print->p = va_arg(value->args, uintptr_t);
 	fill_size(&print);
