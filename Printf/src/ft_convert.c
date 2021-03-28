@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 04:07:34 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/28 00:45:41 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/28 15:24:06 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ static	int		size_ptr (uintptr_t num, int base)
 
 static	void	fill_size(t_print **print)
 {
-	if ((*print)->type == 'd' && (*print)->d < 0)
+	if (((*print)->type == 'd' || (*print)->type == 'i') && ((*print)->d < 0))
 		(*print)->size = 1 + size_num((*print)->d * -1, 10);
-	else if ((*print)->type == 'd')
+	else if ((*print)->type == 'd' || (*print)->type == 'i')
 		(*print)->size = size_num((*print)->d, 10);
 	else if ((*print)->type == 'u')
 		(*print)->size = size_num((*print)->u, 10);
