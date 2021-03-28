@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:31:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 21:31:19 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/27 22:21:34 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,13 @@ int		ft_printf(const char *format, ...)
 			/* -------------------------------------------------------------- */
 			/* ------------------------- TEST FLAGS ------------------------- */
 			/* -------------------------------------------------------------- */
-			printf("index: %d\n", value.index);
-			printf("count: %d\n", value.count);
-			printf("dot: %d\n", value.dot);
-			printf("minus: %d\n", value.minus);
-			printf("precision: %d\n", value.precision);
-			printf("width: %d\n", value.width);
-			printf("zero: %d\n", value.zero);
+			// printf("index: %d\n", value.index);
+			// printf("count: %d\n", value.count);
+			// printf("dot: %d\n", value.dot);
+			// printf("minus: %d\n", value.minus);
+			// printf("precision: %d\n", value.precision);
+			// printf("width: %d\n", value.width);
+			// printf("zero: %d\n", value.zero);
 			/* -------------------------------------------------------------- */
 			/* -------------------------------------------------------------- */
 
@@ -66,14 +66,4 @@ int		ft_printf(const char *format, ...)
 	}
 	va_end(value.args);
 	return (value.total);
-}
-
-int main()
-{
-	// char c = 'a';
-	// ft_printf("TESTE\n%c\n%d\n%s\n%u\n%x\n%X\n0x%p\n", 'a', 1000, "oi", -4, 1034, 25963, &c);
-	// printf("%p\n", &c);
-	ft_printf("|%*.5d|\n", 10, 83);
-	// ft_putnbr_fd(1000, 1);
-	return(0);
 }

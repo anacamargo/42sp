@@ -1,3 +1,5 @@
+# include "../includes/ft_printf.h"
+
 void	ft_print_zero(int n)
 {
 	while (n--)

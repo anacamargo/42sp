@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/24 04:07:34 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 21:20:47 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/27 21:54:57 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,10 @@ static	void	fill_size(t_print **print)
 		(*print)->size = size_num((*print)->x, 16);
 	else if ((*print)->type == 'p')
 		(*print)->size = size_num((*print)->p, 16);
+	else if ((*print)->type == 'c')
+		(*print)->size = 1;
+	else if ((*print)->type == 's')
+		(*print)->size = ft_strlen((*print)->s);
 }
 
 void			ft_select_conversion(char c, t_flags *value, t_print *print)

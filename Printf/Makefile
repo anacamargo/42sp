@@ -6,7 +6,7 @@
 #    By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 03:44:20 by aclaudia          #+#    #+#              #
-#    Updated: 2021/03/27 21:40:31 by vcordeir         ###   ########.fr        #
+#    Updated: 2021/03/27 22:00:55 by vcordeir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,5 +51,8 @@ re : fclean all
 run:
 	@$(CC) $(RUNFLAGS) src/ft_printf.c libftprintf.a && ./a.out && rm a.out
 
-test:
+testf:
 	@$(CC) $(RUNFLAGS) src/main.c libftprintf.a && ./a.out && rm a.out
+
+test:
+	@$(CC) src/main.c libftprintf.a && ./a.out && rm a.out
