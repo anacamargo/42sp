@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:31:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/28 16:14:20 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/28 19:01:42 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 static	int	is_printf_flags(int c)
 {
 	if (ft_isdigit(c) || c == '-' || c == '.' || c == '*')
+		return (1);
+	return (0);
+}
+
+static	int	is_printf_type(int c)
+{
+	if (c == 'c' || c == 's' || c == 'd' || c == 'i' || c == 'u' || c == 'x' \
+		|| c == 'X' || c == 'p' || c == '%')
 		return (1);
 	return (0);
 }
@@ -42,7 +50,10 @@ int		ft_printf(const char *format, ...)
 			if (value.count)
 				ft_check_flags(ft_substr(format, (value.index - value.count), \
 					value.count + 1), &value);
-			ft_select_conversion(format[value.index], &value, &print);
+			if (is_printf_type(format[value.index]))
+				ft_select_conversion(format[value.index], &value, &print);
+			else
+				return (value.total);
 
 			/* -------------------------------------------------------------- */
 			/* ------------------------- TEST FLAGS ------------------------- */
@@ -56,8 +67,7 @@ int		ft_printf(const char *format, ...)
 			// printf("zero: %d\n", value.zero);
 			/* -------------------------------------------------------------- */
 			/* -------------------------------------------------------------- */
-
-			value.count += ft_put(&value, &print);
+			value.total += ft_put(&value, &print);
 		}
 		else
 		{

@@ -6,7 +6,7 @@
 #    By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 03:44:20 by aclaudia          #+#    #+#              #
-#    Updated: 2021/03/27 22:00:55 by vcordeir         ###   ########.fr        #
+#    Updated: 2021/03/28 16:35:54 by vcordeir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ $(NAME): $(OBJS)
 clean :
 	@$(MAKE) clean -C ./libft
 	@rm -rf *.o
+	@rm -rf src/*.o
 
 fclean : clean
 	@$(MAKE) fclean -C ./libft

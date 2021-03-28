@@ -29,6 +29,7 @@ int		ft_print_str(t_flags *value, t_print *print)
 			ft_print_space(value->width - ft_min(value->precision, print->size));
 		if (!value->minus)
 			ft_putstr_fd(ft_substr(print->s, 0, value->precision), 1);
+		return (ft_max(value->width, ft_min(value->precision, print->size)));
 	}
 	else
 	{
@@ -38,9 +39,8 @@ int		ft_print_str(t_flags *value, t_print *print)
 			ft_print_space(value->width - print->size);
 		if (!value->minus)
 			ft_putstr_fd(print->s, 1);
+		return (ft_max(value->width, print->size));
 	}
-	return ((value->dot) ? ft_max(value->width, ft_min(value->precision, \
-		print->size)) : ft_max(value->width, print->size));
 }
 
 int		ft_print_uint(t_flags *value, t_print *print, int base, int cap)
