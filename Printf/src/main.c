@@ -2,7 +2,6 @@
 
 int main()
 {
-	
-	printf("|%-5.d|\n", 0);
-	ft_printf("|%-5.d|\n", 0);
+	printf("|%-5.0i|\n", 0);
+	ft_printf("|%-5.0i|\n", 0);
 }

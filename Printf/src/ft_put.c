@@ -161,14 +161,24 @@ int		ft_print_ptr(t_flags *value, t_print *print)
 	return (ft_max(value->width, ft_max(value->precision, print->size)));
 }
 
-void	deal_null_int_values(t_print **print)
+static	void	deal_null_int_values(t_print **print)
 {
 	if ((((*print)->type == 'd' || (*print)->type == 'i') && (*print)->d == 0) \
 		|| (((*print)->type == 'u' || (*print)->type == 'x' || \
 		(*print)->type == 'X') && (*print)->u == 0))
 	{
 		(*print)->type = 'c';
-		(*print)->c = ' ';
+		(*print)->c = '\0';
+		(*print)->size = 0;
+	}
+}
+
+static	void	deal_null_str_values(t_flags **value, t_print **print)
+{
+	if ((*value)->dot && (*value)->precision < 6)
+	{
+		(*print)->s = "\0";
+		(*print)->size = 0;
 	}
 }
 
@@ -179,6 +189,8 @@ int		ft_put(t_flags *value, t_print *print)
 
 	if (value->dot && value->precision == 0)
 		deal_null_int_values(&print);
+	if (print->type == 's' && !ft_strncmp(print->s, "(null)\0", 7))
+		deal_null_str_values(&value, &print);
 	if (print->type == 'c')
 		i += ft_print_char(value, print);
 	else if (print->type == 's')
