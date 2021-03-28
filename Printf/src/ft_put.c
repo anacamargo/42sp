@@ -1,32 +1,24 @@
 #include "../includes/ft_printf.h"
 
-static	int	ft_length_num(int num)
+static	void	print_space(int n)
 {
-	int i;
-
-	i = 1;
-	if (num == 0)
-		return (1);
-	while ((num /= 10) >= 1)
-		i++;
-	return (i);
+	while (n--)
+		ft_putchar_fd(' ', 1);
 }
 
-static int size_ud (int num, int base)
+static	void	print_zero(int n)
 {
-	int i;
-
-	i = 1;
-	if (num == 0)
-		return (1);
-	while ((num /= base) >= 1)
-		i++;
-	return (i);
+	while (n--)
+		ft_putchar_fd('0', 1);
 }
-
 
 int		ft_put(t_flags *value, t_print *print)
 {
+	if (value->width - ft_max(value->precision, print->size) > 0)
+		print_space(value->width - ft_max(value->precision, print->size));
+	if (value->precision - print->size > 0)
+		print_zero(value->precision - print->size);
+	ft_putnbr_fd(print->d, 1);
 	return (0);
 }
 

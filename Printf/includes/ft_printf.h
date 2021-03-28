@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 20:30:30 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/27 21:39:27 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct 	s_print
 	size_t		u;
 	size_t		x;
 	char		type;
+	int			size;
 }				t_print;
 
 
@@ -49,4 +50,6 @@ void		ft_check_flags(char *s, t_flags *value);
 void		ft_select_conversion(char c, t_flags *value, t_print *print);
 int			ft_printf(const char *format, ...);
 int			ft_put(t_flags *flag, t_print *print);
+void		ft_print_zero(int n);
+void		ft_print_space(int n);
 #endif
