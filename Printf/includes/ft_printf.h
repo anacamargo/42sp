@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 22:40:02 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/28 00:23:54 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,14 @@ typedef struct	s_flags
 
 typedef struct 	s_print
 {
-	char		c;
-	char		*s;
-	int			d;
-	uintptr_t	p;
-	size_t		u;
+	char			c;
+	char			*s;
+	int				d;
+	uintptr_t		p;
+	unsigned int	u;
 	// size_t		x;
-	char		type;
-	int			size;
+	char			type;
+	int				size;
 }				t_print;
 
 

@@ -1,6 +1,6 @@
 #include "libft.h"
 
-void	ft_puthex_fd(int n, int fd, int base, int cap)
+void	ft_puthex_fd(unsigned int n, int fd, unsigned int base, int cap)
 {
 	char c;
 

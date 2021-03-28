@@ -58,12 +58,12 @@ int		ft_print_uint(t_flags *value, t_print *print, int base, int cap)
 			ft_print_space(value->width - print->size);
 		if (!value->dot && value->zero && value->width - print->size > 0)
 			ft_print_zero(value->width - print->size);
-		ft_puthex_fd(print->d, 1);
+		ft_puthex_fd(print->u, 1, base, cap);
 	}
 	return (ft_max(value->width, ft_max(value->precision, print->size)));
 }
 
-int		ft_print_int_pos(t_flags *value, t_print *t_print)
+int		ft_print_int_pos(t_flags *value, t_print *print)
 {
 	if (value->minus)
 	{
@@ -91,7 +91,7 @@ int		ft_print_int_pos(t_flags *value, t_print *t_print)
 	return (ft_max(value->width, ft_max(value->precision, print->size)));
 }
 
-int		ft_print_int_neg(t_flags *value, t_print *t_print)
+int		ft_print_int_neg(t_flags *value, t_print *print)
 {
 	if (value->minus || value->dot)
 	{
@@ -125,14 +125,14 @@ int		ft_print_int_neg(t_flags *value, t_print *t_print)
 	return (ft_max(value->width, ft_max(value->precision, print->size)));
 }
 
-int		ft_print_ptr(t_flags *value, t_print *t_print)
+int		ft_print_ptr(t_flags *value, t_print *print)
 {
 	if (value->minus || value->dot)
 	{
 		if (value->dot && (value->width - print->size > 0))
 			ft_print_space(value->width - print->size);	
 		ft_putstr_fd("0x\0", 1);
-		ft_putptr_fd(value->p, 1);
+		ft_putptr_fd(print->p, 1);
 		if (value->minus && (value->width - print->size > 0))
 			ft_print_space(value->width - print->size);
 	}
@@ -141,14 +141,14 @@ int		ft_print_ptr(t_flags *value, t_print *t_print)
 		ft_putstr_fd("0x\0", 1);
 		if (value->width - print->size > 0)
 			ft_print_zero(value->width - print->size);	
-		ft_putptr_fd(value->p, 1);
+		ft_putptr_fd(print->p, 1);
 	}
 	else if (!value->minus && !value->dot && !value->zero)
 	{
 		if (value->width - print->size > 0)
 			ft_print_space(value->width - print->size);
 		ft_putstr_fd("0x\0", 1);
-		ft_putptr_fd(value->p, 1);
+		ft_putptr_fd(print->p, 1);
 	}
 	return (ft_max(value->width, ft_max(value->precision, print->size)));
 }

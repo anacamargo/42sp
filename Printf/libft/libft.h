@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 20:32:12 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 23:03:54 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/28 00:25:02 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(long int n, int fd);
-void				ft_puthex_fd(int n, int fd, int base, int cap);
+void				ft_puthex_fd(unsigned int n, int fd, unsigned int base, int cap);
 void				ft_putptr_fd(uintptr_t n, int fd);
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);

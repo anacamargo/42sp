@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:31:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 22:21:34 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/28 00:38:21 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int		ft_printf(const char *format, ...)
 	t_flags	value;
 	t_print print;
 
-	ft_init_struct(&value);
+	value.index = 0;
+	value.total = 0;
 	va_start(value.args, format);
 	while (format && format[value.index])
 	{
@@ -32,6 +33,7 @@ int		ft_printf(const char *format, ...)
 		{
 			value.index++;
 			value.count = 0;
+			ft_init_struct(&value);
 			while (is_printf_flags(format[value.index]))
 			{
 				value.count++;
