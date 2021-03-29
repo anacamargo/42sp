@@ -39,7 +39,6 @@ typedef struct 	s_print
 	int				d;
 	uintptr_t		p;
 	unsigned int	u;
-	// size_t		x;
 	char			type;
 	int				size;
 }				t_print;
@@ -52,4 +51,9 @@ int			ft_printf(const char *format, ...);
 int			ft_put(t_flags *flag, t_print *print);
 void		ft_print_zero(int n);
 void		ft_print_space(int n);
+int        	ft_print_char(t_flags *value, t_print *print);
+int        	ft_print_str(t_flags *value, t_print *print);
+int        	ft_print_uint(t_flags *value, t_print *print, int base, int cap);
+int			ft_print_int_pos(t_flags *value, t_print *print);
+int         ft_print_ptr(t_flags *value, t_print *print);
 #endif

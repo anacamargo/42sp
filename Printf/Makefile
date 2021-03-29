@@ -6,7 +6,7 @@
 #    By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/03/18 03:44:20 by aclaudia          #+#    #+#              #
-#    Updated: 2021/03/28 16:35:54 by vcordeir         ###   ########.fr        #
+#    Updated: 2021/03/28 20:26:35 by vcordeir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ LIBFT = libft/libft.a
 
 NAME = libftprintf.a
 
-SRCS_LIST = ft_printf.c ft_init_struct.c ft_convert.c ft_check_flags.c ft_put.c ft_print_space.c ft_print_zero.c
+SRCS_LIST = ft_printf.c ft_init_struct.c ft_convert.c ft_check_flags.c ft_put.c ft_print_space.c\
+ft_print_zero.c ft_print_char.c ft_print_str.c ft_print_uint.c ft_print_int_pos.c ft_print_ptr.c
 
 FOLDER = src
 
@@ -42,6 +43,7 @@ clean :
 	@$(MAKE) clean -C ./libft
 	@rm -rf *.o
 	@rm -rf src/*.o
+	@rm -f $(OBJS)
 
 fclean : clean
 	@$(MAKE) fclean -C ./libft
