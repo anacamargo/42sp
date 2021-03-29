@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 04:23:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 04:25:36 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:34:49 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static	int	is_printf_flags(int c)
+static	int		is_printf_flags(int c)
 {
 	if (ft_isdigit(c) || c == '-' || c == '.' || c == '*')
 		return (1);
@@ -27,29 +27,38 @@ static	int	is_printf_type(int c)
 	return (0);
 }
 
-int			ft_printf(const char *format, ...)
+static	void	search_flags(t_flags *value, char *format)
+{
+	value->index++;
+	value->count = 0;
+	while (is_printf_flags(format[value->index]))
+	{
+		value->count++;
+		value->index++;
+	}
+}
+
+static	init_count_index(t_flags *value)
+{
+	value->index = 0;
+	value->total = 0;
+}
+
+int				ft_printf(const char *format, ...)
 {
 	t_flags	value;
 	t_print print;
-
-	value.index = 0;
-	value.total = 0;
+	
+	init_count_index(&value);
 	va_start(value.args, format);
 	while (format && format[value.index])
 	{
 		if (format[value.index] == '%')
 		{
-			value.index++;
-			value.count = 0;
 			ft_init_struct(&value);
-			while (is_printf_flags(format[value.index]))
-			{
-				value.count++;
-				value.index++;
-			}
+			search_flags(&value, format);
 			if (value.count)
-				ft_check_flags(ft_substr(format, (value.index - value.count), \
-					value.count + 1), &value);
+				ft_check_flags(format, &value);
 			if (format[value.index] && is_printf_type(format[value.index]))
 				ft_select_conversion(format[value.index], &value, &print);
 			else
@@ -57,10 +66,7 @@ int			ft_printf(const char *format, ...)
 			value.total += ft_put(&value, &print);
 		}
 		else
-		{
-			ft_putchar_fd(format[value.index], 1);
-			value.total++;
-		}
+			value.total += ft_putchar_fd(format[value.index], 1);
 		value.index++;
 	}
 	va_end(value.args);

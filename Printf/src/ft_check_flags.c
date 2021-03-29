@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_flags.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/18 04:31:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 04:13:30 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:33:15 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,11 @@ static void	deal_digit(char **s, t_flags **value)
 	*s -= 1;
 }
 
-void		ft_check_flags(char *s, t_flags *value)
+void		ft_check_flags(char *format, t_flags *value)
 {
+	char *s;
+
+	s = ft_substr(format, (value->index - value->count), value->count + 1);
 	while (*s)
 	{
 		if (*s == '-')
