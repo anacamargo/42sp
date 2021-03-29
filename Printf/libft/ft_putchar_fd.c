@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/24 23:44:15 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 00:26:50 by vcordeir         ###   ########.fr       */
+/*   Created: 2021/02/24 03:40:07 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/03/29 17:09:46 by anacamargo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_int.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 04:11:44 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 00:07:20 by vcordeir         ###   ########.fr       */
+/*   Created: 2021/03/29 04:01:37 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/03/29 16:48:38 by anacamargo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static	int	ft_print_int_pos(t_flags *value, t_print *print)
+static int	ft_print_int_pos(t_flags *value, t_print *print)
 {
 	if (value->minus)
 	{
@@ -40,7 +40,7 @@ static	int	ft_print_int_pos(t_flags *value, t_print *print)
 	return (ft_max(value->width, ft_max(value->prec, print->size)));
 }
 
-static	int	ft_print_int_neg_minus_dot(t_flags *value, t_print *print)
+static int	ft_print_int_neg_minus_dot(t_flags *value, t_print *print)
 {
 	if (!value->minus)
 		if (value->width - ft_max(value->prec, print->size) > 0)
@@ -57,7 +57,7 @@ static	int	ft_print_int_neg_minus_dot(t_flags *value, t_print *print)
 	return (ft_max(value->width, ft_max(value->prec + 1, print->size + 1)));
 }
 
-static	int	ft_print_int_neg_not(t_flags *value, t_print *print)
+static int	ft_print_int_neg_not(t_flags *value, t_print *print)
 {
 	if (value->zero)
 	{
@@ -75,7 +75,7 @@ static	int	ft_print_int_neg_not(t_flags *value, t_print *print)
 	return (ft_max(value->width, ft_max(value->prec + 1, print->size + 1)));
 }
 
-int ft_print_int(t_flags *value, t_print *print)
+int			ft_print_int(t_flags *value, t_print *print)
 {
 	int i;
 

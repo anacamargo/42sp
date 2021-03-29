@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/25 00:04:47 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/27 23:04:34 by vcordeir         ###   ########.fr       */
+/*   Created: 2021/02/24 03:40:07 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/03/29 17:13:36 by anacamargo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

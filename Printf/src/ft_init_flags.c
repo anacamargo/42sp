@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_flags.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/24 02:08:22 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 04:13:27 by aclaudia         ###   ########.fr       */
+/*   Created: 2021/03/29 04:01:37 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/03/29 16:41:45 by anacamargo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

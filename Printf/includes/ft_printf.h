@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 00:52:05 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/29 16:54:52 by anacamargo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	FT_PRINTF_H
+#ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdarg.h>
@@ -43,17 +43,19 @@ typedef	struct		s_print
 	int				size;
 }					t_print;
 
-void		ft_init_struct(t_flags *flag);
-void		ft_check_flags(const char *format, t_flags *value);
-void		ft_select_conversion(char c, t_flags *value, t_print *print);
-int			ft_printf(const char *format, ...);
-int			ft_put(t_flags *flag, t_print *print);
-void		ft_print_zero(int n);
-void		ft_print_space(int n);
-int			ft_print_char(t_flags *value, t_print *print);
-int			ft_print_str(t_flags *value, t_print *print);
-int			ft_print_uint(t_flags *value, t_print *print, int base, int cap);
-int			ft_print_int(t_flags *value, t_print *print);
-int			ft_print_ptr(t_flags *value, t_print *print);
+void				ft_init_struct(t_flags *flag);
+void				ft_check_flags(const char *format, t_flags *value);
+void				ft_select_conversion(char c, t_flags *value,\
+t_print *print);
+int					ft_printf(const char *format, ...);
+int					ft_put(t_flags *flag, t_print *print);
+void				ft_print_zero(int n);
+void				ft_print_space(int n);
+int					ft_print_char(t_flags *value, t_print *print);
+int					ft_print_str(t_flags *value, t_print *print);
+int					ft_print_uint(t_flags *value, t_print *print, int base,\
+int cap);
+int					ft_print_int(t_flags *value, t_print *print);
+int					ft_print_ptr(t_flags *value, t_print *print);
 
 #endif

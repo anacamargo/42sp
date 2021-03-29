@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/29 04:23:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 00:50:07 by vcordeir         ###   ########.fr       */
+/*   Created: 2021/03/29 04:01:37 by aclaudia          #+#    #+#             */
+/*   Updated: 2021/03/29 16:51:42 by anacamargo       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-static	int		is_printf_flags(int c)
+static int		is_printf_flags(int c)
 {
 	if (ft_isdigit(c) || c == '-' || c == '.' || c == '*')
 		return (1);
 	return (0);
 }
 
-static	int		is_printf_type(int c)
+static int		is_printf_type(int c)
 {
 	if (c == 'c' || c == 's' || c == 'd' || c == 'i' || c == 'u' || c == 'x' \
 		|| c == 'X' || c == 'p' || c == '%')
@@ -44,11 +44,11 @@ static	void	init_count_index(t_flags *value)
 	value->total = 0;
 }
 
-int		ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
 	t_flags	value;
 	t_print print;
-	
+
 	init_count_index(&value);
 	va_start(value.args, format);
 	while (format && format[value.index])
