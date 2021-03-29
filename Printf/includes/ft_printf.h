@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 00:06:56 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:52:05 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ typedef	struct		s_print
 }					t_print;
 
 void		ft_init_struct(t_flags *flag);
-void		ft_check_flags(char *s, t_flags *value);
+void		ft_check_flags(const char *format, t_flags *value);
 void		ft_select_conversion(char c, t_flags *value, t_print *print);
 int			ft_printf(const char *format, ...);
 int			ft_put(t_flags *flag, t_print *print);

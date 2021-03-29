@@ -6,7 +6,7 @@
 /*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 04:23:46 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 00:34:49 by vcordeir         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:50:07 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static	int		is_printf_flags(int c)
 	return (0);
 }
 
-static	int	is_printf_type(int c)
+static	int		is_printf_type(int c)
 {
 	if (c == 'c' || c == 's' || c == 'd' || c == 'i' || c == 'u' || c == 'x' \
 		|| c == 'X' || c == 'p' || c == '%')
@@ -27,7 +27,7 @@ static	int	is_printf_type(int c)
 	return (0);
 }
 
-static	void	search_flags(t_flags *value, char *format)
+static	void	search_flags(t_flags *value, const char *format)
 {
 	value->index++;
 	value->count = 0;
@@ -38,13 +38,13 @@ static	void	search_flags(t_flags *value, char *format)
 	}
 }
 
-static	init_count_index(t_flags *value)
+static	void	init_count_index(t_flags *value)
 {
 	value->index = 0;
 	value->total = 0;
 }
 
-int				ft_printf(const char *format, ...)
+int		ft_printf(const char *format, ...)
 {
 	t_flags	value;
 	t_print print;
