@@ -15,7 +15,7 @@ LIBFT = libft/libft.a
 NAME = libftprintf.a
 
 SRCS_LIST = ft_printf.c ft_init_struct.c ft_convert.c ft_check_flags.c ft_put.c ft_print_space.c\
-ft_print_zero.c ft_print_char.c ft_print_str.c ft_print_uint.c ft_print_int_pos.c ft_print_ptr.c
+ft_print_zero.c ft_print_char.c ft_print_str.c ft_print_uint.c ft_print_int.c ft_print_ptr.c
 
 FOLDER = src
 

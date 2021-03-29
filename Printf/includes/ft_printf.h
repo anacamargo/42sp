@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/21 21:53:26 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 04:34:32 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:06:56 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void		ft_print_space(int n);
 int			ft_print_char(t_flags *value, t_print *print);
 int			ft_print_str(t_flags *value, t_print *print);
 int			ft_print_uint(t_flags *value, t_print *print, int base, int cap);
-int			ft_print_int_pos(t_flags *value, t_print *print);
+int			ft_print_int(t_flags *value, t_print *print);
 int			ft_print_ptr(t_flags *value, t_print *print);
 
 #endif

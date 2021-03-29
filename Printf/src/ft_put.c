@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_put.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vcordeir <vcordeir@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 04:22:13 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 04:23:17 by aclaudia         ###   ########.fr       */
+/*   Updated: 2021/03/29 00:02:49 by vcordeir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,8 @@ int				ft_put(t_flags *value, t_print *print)
 		i += ft_print_char(value, print);
 	else if (print->type == 's')
 		i += ft_print_str(value, print);
-	else if ((print->type == 'd' || print->type == 'i') && print->d >= 0)
-		i += ft_print_int_pos(value, print);
-	else if ((print->type == 'd' || print->type == 'i') && print->d < 0)
-		i += ft_print_int_neg(value, print);
+	else if ((print->type == 'd' || print->type == 'i')
+		i += ft_print_int(value, print);
 	else if (print->type == 'u')
 		i += ft_print_uint(value, print, 10, 0);
 	else if (print->type == 'x')
