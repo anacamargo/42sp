@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_print_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anacamargo <anacamargo@student.42.fr>      +#+  +:+       +#+        */
+/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/29 04:01:37 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/29 17:11:47 by anacamargo       ###   ########.fr       */
+/*   Updated: 2021/03/30 02:39:40 by aclaudia         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
