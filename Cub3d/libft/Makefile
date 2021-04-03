@@ -6,7 +6,7 @@
 #    By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/13 00:21:56 by aclaudia          #+#    #+#              #
-#    Updated: 2021/04/02 20:41:57 by aclaudia         ###   ########.fr        #
+#    Updated: 2021/04/03 01:36:44 by aclaudia         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,8 @@ OBJS=$(SRCS:.c=.o)
 FLAGS = -Wall -Wextra -Werror -I./ -c
 
 $(NAME): $(OBJS)
-	gcc $(FLAGS) $(SRCS)
-	ar rc $(NAME) $(OBJS)
+	@gcc $(FLAGS) $(SRCS)
+	@ar rc $(NAME) $(OBJS)
   
 .PHONY: all clean fclean re
 
