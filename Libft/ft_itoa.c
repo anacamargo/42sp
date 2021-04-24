@@ -1,30 +1,19 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 03:10:40 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/01 04:28:13 by aclaudia         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static	int	ft_length_num(long int num)
 {
-	int i;
+	int	i;
 
 	i = 1;
 	if (num == 0)
 		return (1);
-	while ((num /= 10) >= 1)
+	num /= 10;
+	while (num >= 1)
 		i++;
 	return (i);
 }
 
-char		*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	int		i;
 	long	num;
@@ -34,7 +23,7 @@ char		*ft_itoa(int n)
 	num = n;
 	is_negative = num < 0 ? 1 : 0;
 	num *= is_negative ? -1 : 1;
-	str = (char*)malloc((is_negative + ft_length_num(num) + 1) * sizeof(char));
+	str = (char *)malloc((is_negative + ft_length_num(num) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
 	i = is_negative ? (ft_length_num(num) + 1) : ft_length_num(num);

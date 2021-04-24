@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: aclaudia <aclaudia@student.42sp.org.br>    +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/27 00:04:49 by aclaudia          #+#    #+#             */
-/*   Updated: 2021/03/01 04:40:55 by aclaudia         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "libft.h"
 
 static	size_t	count_words(char const *s, char c)
 {
-	size_t n;
+	size_t	n;
 
 	n = 0;
 	while (*s && *s == c)
@@ -32,7 +20,7 @@ static	size_t	count_words(char const *s, char c)
 
 static	size_t	get_end_position(char const *s, char c, size_t start)
 {
-	size_t i;
+	size_t	i;
 
 	i = start;
 	while (s[i] != c && s[i])
@@ -42,7 +30,7 @@ static	size_t	get_end_position(char const *s, char c, size_t start)
 
 static	size_t	get_start_position(char const *s, char c, size_t start)
 {
-	size_t i;
+	size_t	i;
 
 	i = start;
 	while (s[i] == c && s[i])
@@ -50,7 +38,7 @@ static	size_t	get_start_position(char const *s, char c, size_t start)
 	return (i);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char		**arr;
 	size_t		words;
@@ -61,7 +49,7 @@ char			**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	arr = malloc((words + 1) * sizeof(char*));
+	arr = malloc((words + 1) * sizeof(char *));
 	if (!arr)
 		return (NULL);
 	i = 0;
